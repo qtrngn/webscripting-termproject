@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+  <title>Contact</title>
+</head>
+<body>
+  <header class="flex-row">
+    <div class="logo">
+      <img src="photos/LOGO.png" alt="Company Logo">
+    </div>
+    <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Our Menu</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact">
+      <h1>Contact Us</h1>
+      <p>We would love to hear from you! Reach out to us for any inquiries or feedback, and we will get back to you promptly.</p>
+
+      <div class="map">
+        <h3>Our Location</h3>
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2605.058337711092!2d-123.12073758431913!3d49.28272997933033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54867179e8a58d7f%3A0x3a1f4de50c7f5ae!2sDowntown%20Vancouver%2C%20Vancouver%2C%20BC%2C%20Canada!5e0!3m2!1sen!2sus!4v1697079113457!5m2!1sen!2sus" 
+          width="100%" 
+          height="300" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <form id="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+  <div id="notification" class="popup hidden">
+    <p>Thank you for contacting us!</p>
+  </div>
+
+  <footer>
+    <p>Hours: Mon - Sun 10:00 AM - 11:00 PM</p>
+    <p>Contact: (679) 656-5457 | email@example.com</p>
+    <p>Address: 4545 Main St, Vancouver, BC</p>
+  </footer>
+
+  <script>
+    // dropdown menu
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggleButton = document.querySelector(".menu-toggle");
+      const navList = document.querySelector(".main-nav ul");
+      toggleButton.addEventListener("click", () => {
+        navList.classList.toggle("active");
+      });
+    // contact form input
+      const form = document.getElementById("contact-form");
+      const notification = document.getElementById("notification");
+      $("#contact-form").validate({
+        rules: {
+          name: "required",
+          email: {
+            required: true,
+            email: true
+          },
+          message: "required"
+        },
+        messages: {
+          name: "Please enter your name",
+          email: "Please enter a valid email address",
+          message: "Please enter a message"
+        }
+      });
+  
+      // pop up notification after submit
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if ($("#contact-form").valid()) {
+          notification.classList.remove("hidden");
+          setTimeout(() => {
+            notification.classList.add("hidden");
+            form.reset();
+          }, 3000);
+        }
+      });
+    });
+  </script>
+  </body>
+</html>

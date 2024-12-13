@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <title>About Us</title>
+</head>
+<body>
+  <header class="flex-row">
+    <div class="logo">
+      <img src="photos/LOGO.png" alt="Company Logo">
+    </div>
+    <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Our Menu</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="about-section" data-aos="fade-up">
+      <h1>Our story</h1>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      <div id="threejs-container"></div>
+      <div class="about-photos">
+        <img src="photos/chef.png" alt="chef">
+        <img src="photos/hero.png" alt="photo2">
+        <img src="photos/main.png" alt="photo3">
+      </div>
+    </section>
+</main>
+  <footer>
+    <p>Hours: Mon - Sun 10:00 AM - 11:00 PM</p>
+    <p>Contact: (679) 656-5457 | email@example.com</p>
+    <p>Address: 4545 Main St, Vancouver, BC</p>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+     // Scroll Animations
+    document.addEventListener("DOMContentLoaded", () => {
+      AOS.init();
+    });
+
+    // Dropdown menu
+    const toggleButton = document.querySelector(".menu-toggle");
+      const navList = document.querySelector(".main-nav ul");
+      toggleButton.addEventListener("click", () => {
+        navList.classList.toggle("active");
+      });
+  </script>
+</body>
+</html>

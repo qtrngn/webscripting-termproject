@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.3.0/flickity.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&family=Montserrat:wght@400;700&display=swap"rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <title>Term Project</title>
+  </head>
+  <body>
+    <header class="flex-row" data-aos="fade-down">
+      <div class="logo">
+        <img src="photos/LOGO.png" alt="Restaurant logo" />
+      </div>
+      <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <nav class="main-nav">
+        <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Our Menu</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="hero" data-aos="fade-up">
+        <div class="hero-content">
+          <h1>Lorem Ipsum</h1>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry
+          </p>
+          <button class="cta">Make a Reservation</button>
+        </div>
+      </section>
+
+      <section class="about" data-aos="fade-right">
+        <div class="about-content">
+          <blockquote>
+            <p>
+              'Content here, content here,' making it look like readable
+              English.
+            </p>
+            <cite>“Quote the chef”</cite>
+          </blockquote>
+          <img src="photos/Chef.png" alt="Chef quote" />
+        </div>
+      </section>
+      <section class="menu" data-aos="fade-left">
+        <h2>Our Menu</h2>
+        <div class="menu-grid">
+          <div class="menu-item" data-aos="zoom-in">
+            <img src="photos/main.png" alt="Main Menu" />
+            <h3>Main Menu</h3>
+            <p>
+              There are many variations of passages of Lorem Ipsum available,
+              but the majority have suffered alteration in some form.
+            </p>
+          </div>
+          <div class="menu-item" data-aos="zoom-in">
+            <img src="photos/tasting.png" alt="Tasting Menu" />
+            <h3>Tasting Menu</h3>
+            <p>
+              There are many variations of passages of Lorem Ipsum available,
+              but the majority have suffered alteration in some form.
+            </p>
+          </div>
+          <div class="menu-item" data-aos="zoom-in">
+            <img src="photos/lunch.png" alt="Lunch Menu" />
+            <h3>Lunch Special</h3>
+            <p>
+              There are many variations of passages of Lorem Ipsum available,
+              but the majority have suffered alteration in some form.
+            </p>
+          </div>
+          <div class="menu-item" data-aos="zoom-in">
+            <img src="photos/dessert.png" alt="Dessert Menu" />
+            <h3>Dessert</h3>
+            <p>
+              There are many variations of passages of Lorem Ipsum available,
+              but the majority have suffered alteration in some form.
+            </p>
+          </div>
+          <div class="menu-item" data-aos="zoom-in">
+            <img src="photos/drinks.png" alt="Drink Menu" />
+            <h3>Drink</h3>
+            <p>
+              There are many variations of passages of Lorem Ipsum available,
+              but the majority have suffered alteration in some form.
+            </p>
+          </div>
+          <div class="menu-item" data-aos="zoom-in">
+            <img src="photos/wine.png" alt="Wine Menu" />
+            <h3>Wine</h3>
+            <p>
+              There are many variations of passages of Lorem Ipsum available,
+              but the majority have suffered alteration in some form.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="carousel" data-aos="fade-up">
+        <div class="carousel-cell">
+          <img src="photos/slider1.png" alt="Slide 1" />
+        </div>
+        <div class="carousel-cell">
+          <img src="photos/slider2.png" alt="Slide 2" />
+        </div>
+        <div class="carousel-cell">
+          <img src="photos/slider3.png" alt="Slide 3" />
+        </div>
+        <div class="carousel-cell">
+          <img src="photos/slider4.png" alt="Slide 4" />
+        </div>
+      </section>
+      </main>
+      <footer>
+        <p>Hours: Mon - Sun 10:00 AM - 11:00 PM</p>
+        <p>Contact: (679) 656-5457 | email@example.com</p>
+        <p>Address: 4545 Main St, Vancouver, BC</p>
+      </footer>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.3.0/flickity.pkgd.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          // Scroll Animations
+          AOS.init();
+      
+          // Carousel 
+          const elem = document.querySelector(".carousel");
+          if (elem) {
+            new Flickity(elem, {
+              autoPlay: 1500,
+              wrapAround: true,
+              pageDots: true,
+              prevNextButtons: false,
+            });
+          }
+      
+          // Menu Toggle
+          const toggleButton = document.querySelector(".menu-toggle");
+          const navList = document.querySelector(".main-nav ul");
+          if (toggleButton && navList) {
+            toggleButton.addEventListener("click", () => {
+              navList.classList.toggle("active");
+            });
+          }
+        });
+      </script>
+    </body>
+</html>
